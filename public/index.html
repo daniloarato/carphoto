@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#181818" />
+    <meta name="description" content="Seu carro, sob uma nova perspectiva. Transforme suas fotos com quatro estilos de fotografia automotiva e inteligência artificial." />
+    <title>CarPhoto — Uma nova perspectiva</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#studio">Ir para o estúdio</a>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="CarPhoto início"><span class="brand-symbol" aria-hidden="true">//</span> CARPHOTO<span class="wordmark-dot">®</span></a>
+      <nav aria-label="Navegação principal"><a href="#studio">Estúdio</a><a href="#perspectivas">Os estilos</a></nav>
+      <span class="header-caption">AUTOMOTIVE IMAGE STUDIO</span>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> UM NOVO OLHAR PARA O SEU CARRO</p>
+          <h1 id="hero-title">O mesmo carro.<br />Outra perspectiva.</h1>
+          <p class="hero-description">Da sua câmera para uma nova cena.<br />Fotografia automotiva, reinventada com IA.</p>
+          <a class="button primary" href="#studio">CRIAR MINHA FOTO <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+        <div class="hero-footer"><span>01 — A SUA PRÓXIMA MELHOR FOTO</span><a href="#studio" aria-label="Descer até o estúdio">EXPLORAR <span aria-hidden="true">↓</span></a></div>
+      </section>
+      <section class="studio section-wrap" id="studio" aria-labelledby="studio-title">
+        <div class="section-heading"><div><p class="eyebrow">O ESTÚDIO / CARPHOTO</p><h2 id="studio-title">Sua foto. Sua direção.</h2></div><p>Escolha uma foto, encontre seu ângulo.<br />A próxima cena começa aqui.</p></div>
+        <div class="studio-grid">
+          <div class="photo-column">
+            <div class="step-heading"><span class="step-number">01</span><h3>O ponto de partida</h3><span class="step-detail">SUA FOTO</span></div>
+            <div id="dropzone" class="upload-zone">
+              <div id="empty-state" class="empty-state">
+                <svg class="upload-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 13h9l3-5h8l3 5h9v26H8V13Z" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="25" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M35 18h1" stroke="currentColor" stroke-width="2"/></svg>
+                <h4>Todo grande clique começa aqui.</h4><p>Arraste sua foto ou escolha como começar.</p>
+                <div class="upload-actions"><button id="upload-button" class="button outline" type="button">ENVIAR FOTO <span aria-hidden="true">↑</span></button><button id="camera-button" class="button text-button" type="button">USAR CÂMERA <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+                <span class="file-hint">JPG, PNG ou WebP · Até 15 MB</span>
+              </div>
+              <div id="photo-state" class="photo-state" hidden><img id="source-image" alt="Foto original do seu carro" /><div class="photo-toolbar"><span id="file-name"></span><button id="replace-button" type="button">TROCAR FOTO</button></div></div>
+              <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" hidden />
+              <input id="camera-input" type="file" accept="image/*" capture="environment" hidden />
+            </div>
+            <p class="photo-tip"><svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.5"/></svg> Para um resultado melhor, enquadre o carro inteiro e use boa iluminação.</p>
+          </div>
+          <form id="edit-form" class="controls-column">
+            <div class="step-heading"><span class="step-number">02</span><h3>Escolha uma perspectiva</h3></div>
+            <fieldset class="presets"><legend class="sr-only">Estilo da edição</legend>
+              <label class="preset"><input type="radio" name="preset" value="proshot" checked /><span class="preset-icon" aria-hidden="true">◈</span><span class="preset-copy"><span class="preset-title">Pro shot <span>/proshot</span></span><span class="preset-description">Luz refinada. Acabamento de editorial.</span></span><span class="radio-mark"></span></label>
+              <label class="preset"><input type="radio" name="preset" value="droneview" /><span class="preset-icon drone-icon" aria-hidden="true">⌘</span><span class="preset-copy"><span class="preset-title">Drone view <span>/droneview</span></span><span class="preset-description">Um novo ponto de vista, lá de cima.</span></span><span class="radio-mark"></span></label>
+              <label class="preset"><input type="radio" name="preset" value="lowangle" /><span class="preset-icon" aria-hidden="true">∠</span><span class="preset-copy"><span class="preset-title">Low angle <span>/lowangle</span></span><span class="preset-description">Mais presença. Mais perto do asfalto.</span></span><span class="radio-mark"></span></label>
+              <label class="preset"><input type="radio" name="preset" value="rollingview" /><span class="preset-icon" aria-hidden="true">≋</span><span class="preset-copy"><span class="preset-title">Rolling view <span>/rollingview</span></span><span class="preset-description">O carro em foco. O mundo em movimento.</span></span><span class="radio-mark"></span></label>
+            </fieldset>
+            <button id="generate-button" class="button primary generate-button" type="submit" disabled><span id="generate-label">GERAR MINHA FOTO</span><svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            <p class="generation-note">Uma foto. Uma nova possibilidade.<br />A edição pode levar até 3 minutos.</p>
+            <p id="availability" class="availability" role="status" hidden></p>
+          </form>
+        </div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+        <section id="result" class="result" aria-labelledby="result-title" hidden>
+          <div class="section-heading"><div><p class="eyebrow">03 / A NOVA PERSPECTIVA</p><h2 id="result-title" tabindex="-1">Pronta para impressionar.</h2></div><a id="download" class="button primary" download="carphoto.png">BAIXAR FOTO <span aria-hidden="true">↓</span></a></div>
+          <div class="comparison"><figure><img id="before-image" alt="Foto original, antes da edição" /><figcaption>ORIGINAL</figcaption></figure><figure><img id="result-image" alt="Foto do carro editada por inteligência artificial" /><figcaption id="result-caption">CARPHOTO</figcaption></figure></div>
+          <p class="result-note">Imagem editada por IA. Confira os detalhes do veículo antes de usar em um anúncio. Baixe sua foto antes de sair desta página.</p>
+        </section>
+      </section>
+      <section id="perspectivas" class="perspectives section-wrap" aria-labelledby="perspectives-title">
+        <div class="section-heading"><div><p class="eyebrow">QUATRO MANEIRAS DE VER</p><h2 id="perspectives-title">Cada ângulo, uma história.</h2></div><span class="editorial-index">01 — 04</span></div>
+        <div class="perspective-grid"><article><span class="article-number">01 /</span><h3>Precisão de estúdio.</h3><p>O Pro shot valoriza a luz, os reflexos e os detalhes que tornam seu carro único.</p></article><article><span class="article-number">02 /</span><h3>Além do horizonte.</h3><p>O Drone view reconstrói a cena de uma perspectiva elevada, com amplitude e contexto.</p></article><article><span class="article-number">03 /</span><h3>Presença em cada linha.</h3><p>O Low angle aproxima a câmera do chão para realçar as proporções e a postura do carro.</p></article><article><span class="article-number">04 /</span><h3>Feito para o movimento.</h3><p>O Rolling view cria uma cena dinâmica, com fundo em movimento e carro em destaque.</p></article></div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="wordmark" href="#"><span class="brand-symbol" aria-hidden="true">//</span> CARPHOTO</a><span>UM NOVO OLHAR. A MESMA PAIXÃO.</span><span>FOTOGRAFIA AUTOMOTIVA COM IA</span></footer>
+  </body>
+</html>
